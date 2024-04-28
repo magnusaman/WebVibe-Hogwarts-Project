@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider{
+            height: 400px;
+            width: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 auto;
+          }
+          .slides{
+            width: 500%;
+            height: 500px;
+            display: flex;
+          
+          }
+          .slides input{
+            display: none;
+          }
+          .slide{
+            width: 20%;
+            transition: 2s;
+          }
+          .slide img{
+            width: 800px;
+            height: 500px;
+          }
+          .navigation-manual{
+            position: absolute;
+            width: 800px;
+            margin-top: -40px;
+            display: flex;
+            justify-content: center;
+          
+          }
+          .manual-btn{
+            border: 2px solid #40D3DC;
+            padding: 5px;
+            border-radius: 10px;
+            transition: 1s;
+          }
+          .manual-btn:not(:last-child){
+            margin-right: 40px;
+          }
+          .manual-btn:hover{
+            background: #40D3DC;
+          }
+          #radio1:checked ~ .first{
+            margin-left: 0;
+          }
+          #radio2:checked ~ .first{
+            margin-left: -20%;
+          }
+          #radio3:checked ~ .first{
+            margin-left: -40%;
+          }
+          #radio4:checked ~ .first{
+            margin-left: -60%;
+          }
+          #radio5:checked ~ .first{
+            margin-left: -80%;
+          }
+          #radio6:checked ~ .first{
+            margin-left: -100%;
+          }
+          .navigation-auto{
+            position: absolute;
+            display: flex;
+            width: 800px;
+            justify-content: center;
+            margin-top: 460px;
+          
+          }
+          .navigation-auto div{
+            border: 2px solid #40D3DC;
+            padding: 5px;
+            border-radius: 10px;
+            transition: 1s;
+          
+          }
+          .navigation-auto div:not(:last-child){
+            margin-right: 40px;
+          }
+          #radio1:checked ~ .navigation-auto .auto-btn1{
+            background-color: #40D3DC;
+          }
+          #radio2:checked ~ .navigation-auto .auto-btn2{
+            background-color: #40D3DC;
+          }
+          #radio3:checked ~ .navigation-auto .auto-btn3{
+            background-color: #40D3DC;
+          }
+          #radio4:checked ~ .navigation-auto .auto-btn4{
+            background-color: #40D3DC;
+          }
+          #radio5:checked ~ .navigation-auto .auto-btn5{
+            background-color: #40D3DC;
+          }
+          #radio6:checked ~ .navigation-auto .auto-btn6{
+            background-color: #40D3DC;
+          }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <input type="radio" name="radio-btn" id="radio5">
+            <input type="radio" name="radio-btn" id="radio6">
+            <div class="slide first">
+                <img src="/img/Slide/789465.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="/img/Slide/826724.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="/img/Slide/541392.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="/img/Slide/900249.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="/img/Slide/Quidditch.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="/img/Slide/3346747.jpg" alt="">
+            </div>
+    <div class="navigation-auto">
+        <div class="auto-btn1"></div>
+        <div class="auto-btn2"></div>
+        <div class="auto-btn3"></div>
+        <div class="auto-btn4"></div>
+        <div class="auto-btn5"></div>
+        <div class="auto-btn6"></div>
+    </div>
+        </div>
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+            <label for="radio5" class="manual-btn"></label>
+            <label for="radio6" class="manual-btn"></label>
+        </div>
+    
+    </div>
+    <script>
+        var counter = 1;
+setInterval(function(){
+    document.getElementById('radio' + counter).checked = true;
+    counter++;
+    if(counter > 6){ // Updated condition to check if counter is greater than 6
+        counter = 1;
+    }
+},5000);
+
+    </script>
+</body>
+</html>

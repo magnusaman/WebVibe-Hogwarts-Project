@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts School Of Witchcraft And Wizardry</title>
+    <link rel="icon" href="/img/hogwarts-7917.png" type="image/png">
+
+   <style>
+    * {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+      }
+      
+      @font-face {
+        font-family: 'HARRYP__';
+        src: url('HARRYP__.TTF') format('truetype');
+      }
+      
+      @font-face {
+        font-family: 'AnimalesFantastic-lGly';
+        src: url('AnimalesFantastic-lGly.ttf') format('truetype');
+      }
+      
+      body {
+        font-family: 'AnimalesFantastic-lGly', sans-serif;
+      }
+      
+      @keyframes appear {
+        0% { opacity: 0; transform: translateY(-50px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      
+      .logo {
+        opacity: 0;
+        animation: appear 0.7s ease forwards;
+        display: inline-block;
+        overflow: hidden;
+      }
+      
+      .logo span {
+        display: inline-block;
+        opacity: 0;
+        animation: appear 0.4s ease forwards;
+        animation-delay: calc(0.1s * var(--index));
+      }
+      
+      nav {
+        background: black;
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center; /* Vertically center align */
+        justify-content: center; /* Horizontally center align */
+        position: fixed;
+        z-index: 0;
+        opacity: 0.9; /* Changed opacity value */
+      }
+      
+      .logo a {
+        color: rgb(255, 255, 255);
+        font-size: 25px; /* Adjust font size as needed */
+        font-weight: bold;
+        text-align: left; /* Align text to center */
+        white-space: nowrap; /* Prevent text from wrapping */
+      }
+      
+      #video-bg {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: 100vw;
+        height: 100%;
+        z-index: -99;
+        object-fit: fill; /* Ensure the video covers the entire container */
+      }
+      
+      .cursor {
+        position: fixed;
+        z-index: 9999;
+
+      }
+      
+      #flashlight {
+        position: fixed;
+        left: -100%;
+        top: -100%;
+        height: 300%;
+        width: 300%;
+        background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0) 2%, rgba(0, 0, 0, 0.3) 4%);
+        filter: blur(20px);
+        transition:
+          left .5s ease-in-out,
+          top .5s ease-in-out,
+          height .5s ease-in-out,
+          width .5s ease-in-out;
+      }
+      
+      .hamburger ul {
+        display: flex;
+        color: #fefefe;
+        font-size: 20px;
+      }
+      
+      .hamburger ul li a {
+        display: block;
+        color: #fefefe;
+        font-size: 25px;
+        padding: 10px 25px;
+        border-radius: 50px;
+        transition: 0.2s;
+        margin: -10px 25px;
+      }
+      
+      .menu ul li:hover a {
+        background: #413f3f;
+      }
+      
+      .menu {
+        position: absolute;
+        color: rgb(186, 72, 72);
+        font-size: 3vw;
+        top: 0;
+        left: 30px; /* Change left value to 0 to move the menu to the top-left corner */
+      }
+      
+      .menu:hover .sub-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+      .sub-menu {
+        
+        opacity: 0;
+        visibility: hidden;
+        list-style-type:none;
+        transition: opacity 0.5s ease-in-out;
+        background-color: rgba(39, 34, 34, 0.603);
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        width: auto;
+        padding: 10px;
+        z-index: 0; /* Add z-index to ensure submenu appears above other content */
+      }
+      
+      .menu-item:hover .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        display: inline;
+      }
+      
+      .sub-menu__links {
+        font-size: 2vw;
+        color: rgb(185, 58, 58);
+        display: block;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color 0.2s;
+      }
+      
+      .sub-menu__links:hover {
+        background-color: #413f3f;
+      }
+      #time{
+        position: absolute;
+        top: 95%;
+        left: 88%;
+        transform: translate(-50%,-50%);
+        color: #fefefe;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        z-index: 1;
+      }
+      .Quotes{
+        width: 100%;
+        position:absolute;
+        text-align: center;
+        bottom: 15%;
+        color: #fefefe;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .Quotes h2{
+        font-size: 28.7px;
+        margin-top: 10px;
+        font-weight: 500;
+      }
+      .date {
+        position: absolute;
+        top: 92%;
+        left: 84.5%;
+        transform: translate(-50%,-50%);
+        color: #fefefe;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        z-index: 1;
+      }
+      .slider{
+        height: 530px;
+        width: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 0 auto;
+        pointer-events: none;
+      }
+      .slides{
+        width: 500%;
+        height: 500px;
+        display: flex;
+      
+      }
+      .slides input{
+        display: none;
+      }
+      .slide{
+        width: 20%;
+        transition: 2s;
+      }
+      .slide img{
+        width: 800px;
+        height: 500px;
+      }
+      .navigation-manual{
+        position: absolute;
+        width: 800px;
+        margin-top: 400px;
+        display: flex;
+        justify-content: center;
+      
+      }
+      .manual-btn{
+        border: 2px solid #40D3DC;
+        padding: 5px;
+        border-radius: 10px;
+        transition: 1s;
+        z-index: 999;
+      }
+      .manual-btn:not(:last-child){
+        margin-right: 40px;
+      }
+      .manual-btn:hover{
+        background: #40D3DC;
+      }
+      #radio1:checked ~ .first{
+        margin-left: 0;
+      }
+      #radio2:checked ~ .first{
+        margin-left: -20%;
+      }
+      #radio3:checked ~ .first{
+        margin-left: -40%;
+      }
+      #radio4:checked ~ .first{
+        margin-left: -60%;
+      }
+      #radio5:checked ~ .first{
+        margin-left: -80%;
+      }
+      #radio6:checked ~ .first{
+        margin-left: -100%;
+      }
+      .navigation-auto{
+        position: absolute;
+        display: flex;
+        width: 800px;
+        justify-content: center;
+        margin-top: 460px;
+      
+      }
+      .navigation-auto div{
+        border: 2px solid #40D3DC;
+        padding: 5px;
+        border-radius: 10px;
+        transition: 1s;
+      
+      }
+      .navigation-auto div:not(:last-child){
+        margin-right: 40px;
+      }
+      #radio1:checked ~ .navigation-auto .auto-btn1{
+        background-color: #40D3DC;
+      }
+      #radio2:checked ~ .navigation-auto .auto-btn2{
+        background-color: #40D3DC;
+      }
+      #radio3:checked ~ .navigation-auto .auto-btn3{
+        background-color: #40D3DC;
+      }
+      #radio4:checked ~ .navigation-auto .auto-btn4{
+        background-color: #40D3DC;
+      }
+      #radio5:checked ~ .navigation-auto .auto-btn5{
+        background-color: #40D3DC;
+      }
+      #radio6:checked ~ .navigation-auto .auto-btn6{
+        background-color: #40D3DC;
+      }
+   </style>
+</head>
+
+<body onload="initClock()">
+    <nav class="hamburger">
+        <label class="logo"> <a href="#">
+            <span style="--index: 1;">H</span>
+            <span style="--index: 2;">o</span>
+            <span style="--index: 3;">g</span>
+            <span style="--index: 4;">w</span>
+            <span style="--index: 5;">a</span>
+            <span style="--index: 6;">r</span>
+            <span style="--index: 7;">t</span>
+            <span style="--index: 8;">s</span>
+            <span style="--index: 9;"></span>
+            <span style="--index: 10;"></span>
+            <span style="--index: 1;">S</span>
+            <span style="--index: 2;">c</span>
+            <span style="--index: 3;">h</span>
+            <span style="--index: 4;">o</span>
+            <span style="--index: 5;">o</span>
+            <span style="--index: 6;">l</span>
+            <span style="--index: 7;"> </span>
+            <span style="--index: 8;"> </span>
+            <span style="--index: 1;">O</span>
+            <span style="--index: 2;">f</span>
+            <span style="--index: 3;"> </span>
+            <span style="--index: 1;">W</span>
+            <span style="--index: 2;">i</span>
+            <span style="--index: 3;">t</span>
+            <span style="--index: 4;">c</span>
+            <span style="--index: 5;">h</span>
+            <span style="--index: 6;">c</span>
+            <span style="--index: 7;">r</span>
+            <span style="--index: 8;">a</span>
+            <span style="--index: 9;">f</span>
+            <span style="--index: 10;">t</span>
+            <span style="--index: 11;"> </span>
+            <span style="--index: 12;"> </span>
+            <span style="--index: 1;">A</span>
+            <span style="--index: 2;">n</span>
+            <span style="--index: 3;">d</span>
+            <span style="--index: 4;"> </span>
+            <span style="--index: 5;"> </span>
+            <span style="--index: 1;">W</span>
+            <span style="--index: 2;">i</span>
+            <span style="--index: 3;">z</span>
+            <span style="--index: 4;">a</span>
+            <span style="--index: 5;">r</span>
+            <span style="--index: 6;">d</span>
+            <span style="--index: 7;">r</span>
+            <span style="--index: 8;">y</span>
+        </a>
+        </label>
+        <br>  
+        <!-- Menu item with submenu -->
+        <div class="menu">
+            <label class="logo">
+                <a href="#">
+                    Menu
+                </a>
+            </label>
+            <!-- Submenu -->
+            <ul class="sub-menu">
+                <li class="menu-item"><a class="sub-menu__links" href="#">Registration Form</a></li>
+                <li class="menu-item"><a class="sub-menu__links" href="Houses.html">Houses Of Hogwarts</a></li>
+                <li class="menu-item"><a class="sub-menu__links" href="courses.html">Courses Offered</a></li>
+                <li class="menu-item"><a class="sub-menu__links" href="about.html">Enchanting Tale of Hogwarts</a></li>
+            </ul>
+        </div>
+    </nav>
+<div class="slider">
+    <div class="slides">
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <input type="radio" name="radio-btn" id="radio4">
+        <input type="radio" name="radio-btn" id="radio5">
+        <input type="radio" name="radio-btn" id="radio6">
+        <div class="slide first">
+            <img src="/img/Slide/789465.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="/img/Slide/826724.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="/img/Slide/541392.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="/img/Slide/900249.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="/img/Slide/Quidditch.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="/img/Slide/3346747.jpg" alt="">
+        </div>
+<div class="navigation-auto">
+    <div class="auto-btn1"></div>
+    <div class="auto-btn2"></div>
+    <div class="auto-btn3"></div>
+    <div class="auto-btn4"></div>
+    <div class="auto-btn5"></div>
+    <div class="auto-btn6"></div>
+</div>
+    </div>
+    <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+        <label for="radio5" class="manual-btn"></label>
+        <label for="radio6" class="manual-btn"></label>
+    </div>
+
+</div>
+
+
+
+
+
+    <div class="cursor"></div>
+    <div id="flashlight"></div>
+    <script src="script.js"></script>
+    <video autoplay muted loop id="video-bg">
+        <source src="/img/yGxg6YWJ-hogwarts-legacy-moewalls-com.mp4" type="video/mp4">
+    </video>
+    
+    <h1 id="time"></h1>
+    <div class="date">
+        <span id="dayname">Day,</span>
+        <span id="mon">Month</span>
+        <span id="daynum">00,</span>
+        <span id="Year">Year</span>
+    </div>
+    <div class="Quotes">PHOENIX PHRASES
+       <hr>
+        <h2>"It is our choices, Harry, that show what we truly are, far more than our abilities." - Albus Dumbledore</h2>
+        <hr>
+    </div>
+    <script>
+        let time = document.getElementById("time");
+        setInterval(() => {
+            let d = new Date();
+            time.innerHTML = d.toLocaleTimeString();
+        }, 1000);
+
+        var counter = 1;
+        setInterval(function(){
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if(counter > 6){
+                counter = 1;
+            }
+        },5000);
+        document.addEventListener("DOMContentLoaded", function () {
+            const slides = document.querySelectorAll('.slide');
+            const manualBtns = document.querySelectorAll('.manual-btn');
+            const autoBtns = document.querySelectorAll('.auto-btn');
+    
+            let currentSlide = 0;
+    
+            // Function to show a specific slide
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.add('active');
+                        autoBtns[i].classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                        autoBtns[i].classList.remove('active');
+                    }
+                });
+            }
+    
+            // Function to navigate to the next slide
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+    
+            // Event listeners for manual buttons
+            manualBtns.forEach((btn, index) => {
+                btn.addEventListener('click', function () {
+                    currentSlide = index;
+                    showSlide(currentSlide);
+                });
+            });
+    
+            // Event listeners for auto buttons (navigation dots)
+            autoBtns.forEach((btn, index) => {
+                btn.addEventListener('click', function () {
+                    currentSlide = index;
+                    showSlide(currentSlide);
+                });
+            });
+    
+            // Automatic slide change
+            setInterval(nextSlide, 5000);
+        });
+        
+                function updateClock() {
+                    console.log("Updating clock...");
+                    var now = new Date();
+                    var dname = now.getDay(),
+                        mo = now.getMonth(),
+                        dnum = now.getDate(),
+                        yr = now.getFullYear();
+                
+                    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                    var ids = ["dayname", "mon", "daynum", "Year"];
+                    var values = [week[dname], months[mo], dnum, yr];
+                
+                    for (var i = 0; i < ids.length; i++) {
+                        document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+                    }
+                }
+                
+            
+                function initClock() {
+                    console.log("Initializing clock...");
+                    updateClock();
+                    setInterval(updateClock, 1000); // Update every 1000 milliseconds (1 second)
+                }
+                
+            
+                window.onload = initClock; // Call initClock when the page is fully loaded
+          
+    </script>
+</body>
+
+</html>

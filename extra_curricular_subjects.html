@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="courses.css">
+    <title>Extra-curricular subjects</title>
+    <style>
+        body {
+            background-color: #1B2430;
+            font-family: sans-serif;
+        }
+        .menu {
+            background-color: #51557E;
+            overflow: hidden;
+          }
+        
+          .menu img{
+            float: left;
+            width: 80px;
+            height: 80px;
+            margin-left: 50px;
+          }
+          
+          /* Style the links inside the navigation bar */
+          .menu a {
+            float: right;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            margin-right: 50px;
+          }
+          
+          /* Change the color of links on hover */
+          .menu a:hover {
+            border: 2px #fff solid;
+            /*background-color: #ddd;*/
+            /*color: black;*/
+            font-size: 19px;
+          }
+          
+          /* Add a color to the active/current link */
+          .menu a.active {
+            background-color: #E7AB79;
+            color: white;
+          }
+          .content{
+            width: 60%;
+            height: fit-content;
+            margin: 50px auto;
+            color: #fff;
+          }
+          .content .core_classes{
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-gap: 10px;  
+        }
+        .content .core_classes > div{
+            height: 150px;
+            border: 1px #fff solid;
+            color: #fff;
+        }
+        .content .core_classes .first_class{
+            background: linear-gradient(rgba(20,20,20, 0.7),
+            rgba(20,20,20, 0.6)), url('../images/core_classes/astronomy2.jpeg');
+            background-size: cover;
+            grid-column: 1 /4;
+            overflow: hidden;
+        }
+        .content .core_classes .second_class{
+            background: linear-gradient(rgba(20,20,20, 0.7),
+            rgba(20,20,20, 0.6)), url('../images/core_classes/charms2.jpeg');
+            background-size: cover;
+            grid-column: 4 /6;
+        }
+        .content .core_classes .third_class{
+            background: linear-gradient(rgba(20,20,20, 0.7),
+            rgba(20,20,20, 0.6)), url('../images/core_classes/dark_arts.jpeg');
+            background-size: cover;
+            grid-column: 1 /3;
+        }
+        .content .core_classes .fourth_class{
+            background: linear-gradient(rgba(20,20,20, 0.7),
+            rgba(20,20,20, 0.6)), url('../images/core_classes/df_against_da2.jpeg');
+            background-size: cover;
+            grid-column: 3 /6;
+        }
+        .content .core_classes .fifth_class{
+            background: linear-gradient(rgba(20,20,20, 0.7),
+            rgba(20,20,20, 0.6)), url('../images/core_classes/herbology2.jpeg');
+            background-size: cover;
+            grid-column: 1 /4;
+        }
+        .content .core_classes .sixth_class{
+            background: linear-gradient(rgba(20,20,20, 0.7),
+            rgba(20,20,20, 0.6)), url('../images/core_classes/history_of_magic2.jpeg');
+            background-size: cover;
+            grid-column: 4 /6;
+        }
+        .content .core_classes .seventh_class{
+            background: linear-gradient(rgba(20,20,20, 0.7),
+            rgba(20,20,20, 0.6)), url('../images/core_classes/potions2.jpeg');
+            background-size: cover;
+            grid-column: 1 /3;
+        }
+        .content .core_classes .eighth_class{
+            background: linear-gradient(rgba(20,20,20, 0.7),
+            rgba(20,20,20, 0.6)), url('../images/core_classes/herbology2.jpeg');
+            background-size: cover;
+            grid-column: 1 /4;
+        }
+        .content .core_classes .ninth_class{
+            background: linear-gradient(rgba(20,20,20, 0.7),
+            rgba(20,20,20, 0.6)), url('../images/core_classes/history_of_magic2.jpeg');
+            background-size: cover;
+            grid-column: 4 /6;
+        }
+        .content .core_classes .tenth_class{
+            background: linear-gradient(rgba(20,20,20, 0.7),
+            rgba(20,20,20, 0.6)), url('../images/core_classes/potions2.jpeg');
+            background-size: cover;
+            grid-column: 1 /3;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="Home.html" style="font-weight: bold; font-size: 22px;">Hogwarts</a>
+
+            <a href="Houses.html">Houses Of Hogwarts</a>
+            <a href="courses.html">Courses</a>
+              <a href="about.html">Echanting Tales Of Hogwarts</a>
+              <a href="./public/LoginPage.html">Login</a>      
+        </nav>
+       </header>
+    <div class="content">
+        <div class="core_classes">
+            <div class="first_class">
+                <h1>Ancient Studies</h1>
+            </div>
+            <div class="second_class">
+                <h1>Apparition</h1>
+            </div>
+            <div class="third_class">
+                <h1>Art</h1>
+            </div>
+            <div class="fourth_class">
+                <h1>Flying</h1>
+            </div>
+            <div class="fifth_class">
+                <h1>Ghoul Studies</h1>
+            </div>
+            <div class="sixth_class">
+                <h1>Magical Theory</h1>
+            </div>
+            <div class="seventh_class">
+                <h1>Muggle Art</h1>
+            </div>
+            <div class="eighth_class">
+                <h1>Muggle Music</h1>
+            </div>
+            <div class="ninth_class">
+                <h1>Music</h1>
+            </div>
+            <div class="tenth_class">
+                <h1>Xylomancy</h1>
+            </div>   
+        </div>
+    </div>
+</body>
+</html>

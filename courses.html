@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/img/hogwarts-7917.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="courses.css">
+<style>
+    body{
+        background-image: url('img/61c642c66844e8b5393b72f1ee917101.jpg');
+    }
+      .content .overview{
+        display: flex;
+        justify-content: center;
+      }
+      .content .overview span{
+        font-size: 30px;
+        font-weight: 900;
+      }
+      .content .subjects{
+        color: #fff;
+        font-size: 25px;
+        font-weight: 900;
+      }
+      .content .all_classes{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+        margin-top: 50px;
+        font-weight: 900;
+        transition: all 0.5s ease-in;
+    }
+    .content .all_classes > div{
+        height: 300px;
+        border: 1px #fff solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+    }
+    .content .all_classes > div:hover{
+        opacity: 0.7;
+        transform: scale(1.10);
+    }
+    .content .all_classes a{
+        text-decoration: none;
+        color: #fff;
+    }
+    .content .all_classes .text_area{
+        padding: 100px;
+    }
+    .content .all_classes .core_classes{
+        background: linear-gradient(rgba(20,20,20, 0.7),
+        rgba(20,20,20, 0.6)), url('/img/Core_Classes.webp');
+    }
+    .content .all_classes .electives{
+        background: linear-gradient(rgba(20,20,20, 0.7),
+        rgba(20,20,20, 0.6)), url('/img/New-Project-17.webp');
+        background-size: cover;
+    }
+    .content .all_classes .extra_cirricular_subjects{
+        background: linear-gradient(rgba(0,0,0, 0.7),
+        rgba(0,0,0, 0.6)), url('/img/EXTRA.avif');
+        background-size: cover;
+    }
+    .text_area{
+        font-size: 12px;
+        text-align: center;
+    }
+    .header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 25px 0;
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+    
+    }
+    .navbar a{
+        position: relative;
+        font-size: 20px;
+        color: #ffffff;
+        margin-right: 30px;
+        text-decoration: none;
+    }
+    .navbar a::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        bottom: -5px;
+        border-radius: 5px;
+        transform: translateY(10px);
+        opacity: 0;
+        transition: .5s ease;
+    }
+    .navbar a:hover:after{
+        transform: translateY(0);
+        opacity: 1;
+    }
+      
+</style>
+    <title>Courses</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="Home.html">Hogwarts</a>
+            <a href="Houses.html">Houses Of Hogwarts</a>
+            <a href="courses.html">Courses</a>
+              <a href="about.html">Enchanting Tales Of Hogwarts</a>
+              <a href="./public/LoginPage.html">Login</a>      
+        </nav>
+       </header>
+    
+        <div class="content">
+            <p class="subjects">Courses: </p>
+            <div class="all_classes">
+                <div class="core_classes">
+                    <a href="core_classes.html">
+                        <div class="text_area">
+                            <h1>Core Courses</h1>
+                        </div>
+                    </a>
+                </div>
+                <div class="electives">
+                    <a href="electives.html">
+                        <div class="text_area">
+                            <h1>Elective Courses</h1>
+                        </div>
+                    </a>
+                </div>
+                <div class="extra_cirricular_subjects">
+                    <a href="extra_curricular_subjects.html">
+                        <div class="text_area">
+                            <h1>Extra-curricular Courses</h1>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

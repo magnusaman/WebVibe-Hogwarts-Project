@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tale Of Hogwarts</title>
+    <link rel="icon" href="/img/hogwarts-7917.png" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background: #000;
+  
+}
+.background{
+    background: url(/img/peakpx\ \(2\).jpg) no-repeat;
+    background-position: center;
+    background-size:cover ;
+    height: 100vh;
+    width: 100%;
+    filter: blur(0px);
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 13%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+.navbar a{
+    position: relative;
+    font-size: 20px;
+    color: #ffffff;
+    margin-right: 30px;
+    text-decoration: none;
+}
+.navbar a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    bottom: -5px;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s ease;
+}
+.navbar a:hover:after{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 75%;
+    height: 550px;
+    margin-top: 20px;
+    background: url(/img/Slide/468384.png) no-repeat;
+    background-position: center;
+    background-size:cover ;
+    border-radius: 20px;
+    overflow: hidden;
+    
+    
+}
+.item{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 58%;
+    height: 100%;
+    color: #fff;
+    background: transparent;
+    padding: 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
+
+
+}
+.item .logo{
+    color: #fff;
+    font-size: 40px;
+    
+
+}
+.text-item h2{
+    font-size: 40px;
+    line-height: 1;
+    
+}
+.text-item p{
+    font-size: 12px;
+    margin: 20px 0;
+    
+}
+.social-icon a i{
+    color: #fff;
+    font-size: 24px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+.social-icon a:hover i{
+    transform: scale(1.2);
+}
+.container .login-section{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 58%);
+    height: 100%;
+    color: #fff;
+    backdrop-filter: blur(2px);
+}
+
+.login-section .form-box{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+}
+.login-section .form-box.register{
+    transform: translateX(430px);
+    transition: transform .6s ease;
+    transition-delay: 0s;
+}
+.login-section.active .form-box.register{
+    transform: translateX(0px);
+    transition-delay: .7s;
+}
+
+.login-section .form-box.login{
+    transform: translateX(0px);
+    transition: transform .6s ease;
+    transition-delay: 0.7s;
+}
+.login-section.active .form-box.login{
+    transform: translateX(430px);
+    transition-delay: 0s;
+}
+
+
+
+.login-section .form-box h2{
+    text-align: center;
+    font-size: 25px;
+}
+
+.form-box .input-box{
+    width: 340px;
+    height: 50px;
+    border-bottom: 2px solid#fff;
+    margin: 30px 0;
+    position: relative;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding-right: 28px;
+
+
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 600px;
+    pointer-events: none;
+    transition: .5s ease;
+
+}
+.input-box .icon{
+    position: absolute;
+    top: 13px;
+    right: 0;
+    font-size: 19px;
+}
+.input-box input:focus~ label,
+.input-box input:valid~ label{
+    top: -5px;
+}
+.remember-password{
+    font-size: 14px;
+    font-weight: 500;
+    margin: -15px 0 15px ;
+    display: flex;
+    justify-content: space-between;
+}
+.remember-password label input{
+    accent-color: #fff;
+    margin-right: 3px;
+
+}
+.remember-password a{
+    color: #fff;
+    text-decoration: none;
+}
+.remember-password a:hover{
+    text-decoration: underline;
+}
+.btn{
+    background: #fff;
+    width: 100%;
+    height: 45px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #f72d7a;
+    font-size: 16px;
+    color: #fff;
+    box-shadow: rgba(0,0,0,0.4);
+
+}
+.create-account{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 25px;
+}
+.create-account p a{
+    color: #fff;
+    font-weight: 600px;
+    text-decoration: none;
+}
+.create-account p a:hover{
+    text-decoration: underline;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- NAVBAR CREATION -->
+   <header class="header">
+    <nav class="navbar">
+        <a href="Home.html">Home</a>
+        <a href="Houses.html">Houses Of Hogwarts</a>
+          <a href="courses.html">Courses</a>
+          <a href="about.html">Enchanting Tales Of Hogwarts</a>
+          <a href="./public/LoginPage.html">Login</a>
+          
+    </nav>
+   
+   </header>
+    <!-- LOGIN FORM CREATION -->
+    <div class="background"></div>
+    <div class="container">
+        <div class="item">
+            <h2 class="logo">Hogwarts School Of Witchcraft And Wizardry</h2>
+            <div class="text-item">
+              
+                <p>At some point in the tenth century, four of the greatest witches and wizards that ever lived founded
+                  Hogwarts School of Witchcraft and Wizardry.
+                  Their names were Godric Gryffindor, Rowena Ravenclaw, Helga Hufflepuff and Salazar Slytherin.
+                  As The Sorting Hat told us, their reason for doing so was because they had the ‘selfsame yearning,
+                  to make the world’s best magic school’, and once they did, each created their own house to represent
+                  a personality and skill that they wanted to nurture.
+                  <br>
+                  <br>
+                  Hogwarts School, located somewhere in the Highlands of Scotland, consisted of the large Hogwarts Castle
+                  and extensive school grounds surrounding it, which included sloping lawns, flowerbeds, vegetable
+                  patches, as well as a loch (called the Black Lake), a large dense forest (called the Forbidden Forest),
+                  several greenhouses and other outbuildings, and a full-size Quidditch Pitch.
+                  <br>
+                  .....Gryffindor students embodied bravery and chivalry.....
+                  <br>
+                  .....Ravenclaw, intelligence and wit.....
+                  <br>
+                  .....Hufflepuff, loyalty and fair play.....
+                  <br>
+                  .....Slytherin, the values of being sly and cunning.....</p>
+      
+            </div>
+        </div>
+     <!-- SIGN UP FORM CREATION -->
+
+    <script>
+        const loginsec=document.querySelector('.login-section')
+const loginlink=document.querySelector('.login-link')
+const registerlink=document.querySelector('.register-link')
+registerlink.addEventListener('click',()=>{
+    loginsec.classList.add('active')
+})
+loginlink.addEventListener('click',()=>{
+    loginsec.classList.remove('active')
+})
+    </script>
+</body>
+
+</html>

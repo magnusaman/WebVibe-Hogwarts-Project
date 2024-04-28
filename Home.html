@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts School Of Witchcraft And Wizardry</title>
+    <link rel="icon" href="/img/hogwarts-7917.png" type="image/png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="initClock()">
+    <header class="header">
+        <nav class="navbar">
+            <a href="Home.html" style="font-weight: bold; font-size: 22px;">Hogwarts</a>
+
+            <a href="Houses.html">Houses Of Hogwarts</a>
+            <a href="courses.html">Courses</a>
+              <a href="about.html">Echanting Tales Of Hogwarts</a>
+              <a href="./public/LoginPage.html">Login</a>      
+        </nav>
+       </header>
+    
+
+    <div class="cursor"></div>
+    <div id="flashlight"></div>
+    <script src="script.js"></script>
+    <video autoplay muted loop id="video-bg">
+        <source src="/img/yGxg6YWJ-hogwarts-legacy-moewalls-com.mp4" type="video/mp4">
+    </video>
+    
+    <h1 id="time"></h1>
+    <div class="date">
+        <span id="dayname">Day,</span>
+        <span id="mon">Month</span>
+        <span id="daynum">00,</span>
+        <span id="Year">Year</span>
+    </div>
+    
+    <div class="Quotes">PHOENIX PHRASES
+       <hr>
+        <h2>"It is our choices, Harry, that show what we truly are, far more than our abilities." - Albus Dumbledore</h2>
+        <hr>
+        
+    </div>
+    <script>
+        let time = document.getElementById("time");
+        setInterval(() => {
+            let d = new Date();
+            time.innerHTML = d.toLocaleTimeString();
+        }, 1000);
+
+        var counter = 1;
+        setInterval(function(){
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if(counter > 6){
+                counter = 1;
+            }
+        },5000);
+    </script>
+    <div class="container">
+        <div
+          class="box box-1"
+          style="--img: url(https://i.postimg.cc/52twVZMr/wp4395550-minerva-mcgonagall-wallpapers.jpg)"
+          data-text="Headmaster Minerva McGonagall"
+        ></div>
+        <div
+          class="box box-2"
+          style="--img: url(https://i.postimg.cc/4yN3cRwk/flitwick.webp)"
+          data-text="Professor Filius Flitwick"
+        ></div>
+        <div
+          class="box box-3"
+          style="--img: url(https://i.postimg.cc/mg6Dv5wB/harry-with-wand-deathly-hallows-part-2-portrait.jpg)"
+          data-text="Professor Harry Potter"
+        ></div>
+        <div
+          class="box box-4"
+          style="--img: url(https://i.postimg.cc/XqPh49zG/Horace.jpg)"
+          data-text="Professor Horace Slughorn"
+        ></div>
+        <div
+          class="box box-5"
+          style="--img: url(https://i.postimg.cc/xqDF7nZB/Longbottom.webp)"
+          data-text="Professor Neville Longbottom"
+        ></div>
+      </div>
+</body>
+
+</html>
